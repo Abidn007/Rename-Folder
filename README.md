@@ -37,7 +37,3 @@ Place the script inside a year folder (like `2023/`) or update the `$folderPath`
 
 ```powershell
 .\RenameResearchPapers.ps1
-
-You can download the script file directly or clone the repository using:
-git clone https://github.com/your-username/Rename-Research-Papers.git
-
