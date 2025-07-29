@@ -27,6 +27,8 @@ This script allows you to **automatically rename** PDF files in a folder using *
 Place the script inside a year folder (like `2023/`) or update the `$folderPath` in the script.
 
 ---
+You can download the script file directly or clone the repo using:
+git clone https://github.com/your-username/Rename-Research-Papers.git
 
 ##  How to Use
 
