@@ -1,0 +1,40 @@
+# RenameFolder.ps1
+
+<
+#
+This PowerShell script helps researchers organize a large number of PDF research papers downloaded from sources like Google Scholar, PubMed, or Semantic Scholar. 
+It automatically renames files in a numeric sequence (e.g., 1.pdf, 2.pdf, 3.pdf...) which is helpful for easy reference, reading, and manuscript writing.
+
+Place this script inside the folder that contains the PDFs, or modify the $folderPath to point to your specific folder.
+#>
+
+# Define the folder path where the PDF files are located
+$folderPath = "F:\4th Year Project\Project\Paper\Dry Lab\Pseudomonas aeruginosa\2023"
+
+# Get all PDF files in the folder and sort them by name for consistent renaming order
+$files = Get-ChildItem -Path $folderPath -Filter "*.pdf" | Sort-Object Name
+
+# Starting number for renaming the files
+$startNumber = 1
+
+# Loop through each file in the folder
+foreach ($file in $files) {
+    # Generate the new file name using the current number
+    $newFileName = "$startNumber.pdf"
+
+    # Construct the full path for the new file name
+    $newFilePath = Join-Path -Path $folderPath -ChildPath $newFileName
+
+    # Check if a file with the new name already exists in the folder to avoid overwriting
+    if (-not (Test-Path $newFilePath)) {
+        # Rename the current file to the new file name
+        Rename-Item -Path $file.FullName -NewName $newFileName
+        Write-Host "Renamed '$($file.Name)' to '$newFileName'"
+    } else {
+        # If the new file name already exists, skip renaming to avoid conflict
+        Write-Host "File '$newFileName' already exists. Skipping '$($file.Name)'."
+    }
+
+    # Increment the number for the next file
+    $startNumber++
+}
