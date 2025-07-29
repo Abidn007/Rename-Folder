@@ -35,7 +35,15 @@ git clone https://github.com/your-username/Rename-Research-Papers.git
 1. **Download or clone** this repository.
 2. Edit the script file `RenameResearchPapers.ps1` if needed.
 3. Make sure your `.pdf` files are in the target folder.
-4. Open **PowerShell** and run the script:
-
-```powershell
+4. Open **PowerShell** and run the script: ```powershell
 .\RenameResearchPapers.ps1
+
+
+
+## 🙋‍♂️ Author
+
+**Md. Abid Hassan**  
+Undergraduate Student  
+Department of Genetic Engineering and Biotechnology  
+University of Rajshahi, Bangladesh
+[LinkedIn](https://www.linkedin.com/in/md-abid-hassan-067783288/) 
